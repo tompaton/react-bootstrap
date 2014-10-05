@@ -22,7 +22,8 @@ var DropdownButton = React.createClass({
     href:      React.PropTypes.string,
     onClick:   React.PropTypes.func,
     onSelect:  React.PropTypes.func,
-    navItem:   React.PropTypes.bool
+    navItem:   React.PropTypes.bool,
+    active:    React.PropTypes.bool
   },
 
   render: function () {
@@ -74,7 +75,8 @@ var DropdownButton = React.createClass({
     var classes = {
         'dropdown': true,
         'open': this.state.open,
-        'dropup': this.props.dropup
+        'dropup': this.props.dropup,
+        'active': this.props.active
       };
 
     return (

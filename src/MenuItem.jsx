@@ -7,6 +7,7 @@ var MenuItem = React.createClass({
   propTypes: {
     header:   React.PropTypes.bool,
     divider:  React.PropTypes.bool,
+    active:   React.PropTypes.bool,
     href:     React.PropTypes.string,
     title:    React.PropTypes.string,
     onSelect: React.PropTypes.func
@@ -36,7 +37,8 @@ var MenuItem = React.createClass({
   render: function () {
     var classes = {
         'dropdown-header': this.props.header,
-        'divider': this.props.divider
+        'divider': this.props.divider,
+        'active': this.props.active
       };
 
     var children = null;
