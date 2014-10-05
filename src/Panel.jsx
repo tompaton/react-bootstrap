@@ -12,13 +12,15 @@ var Panel = React.createClass({
   propTypes: {
     onSelect: React.PropTypes.func,
     header: React.PropTypes.renderable,
+    body: React.PropTypes.bool,
     footer: React.PropTypes.renderable
   },
 
   getDefaultProps: function () {
     return {
       bsClass: 'panel',
-      bsStyle: 'default'
+      bsStyle: 'default',
+      body: true
     };
   },
 
@@ -59,7 +61,7 @@ var Panel = React.createClass({
     return this.transferPropsTo(
       <div className={classSet(classes)} id={this.props.collapsable ? null : this.props.id} onSelect={null}>
         {this.renderHeading()}
-        {this.props.collapsable ? this.renderCollapsableBody() : this.renderBody()}
+        {this.props.body ? (this.props.collapsable ? this.renderCollapsableBody() : this.renderBody()) : this.props.children}
         {this.renderFooter()}
       </div>
     );
