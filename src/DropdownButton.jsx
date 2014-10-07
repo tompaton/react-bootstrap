@@ -23,7 +23,8 @@ var DropdownButton = React.createClass({
     onClick:   React.PropTypes.func,
     onSelect:  React.PropTypes.func,
     navItem:   React.PropTypes.bool,
-    active:    React.PropTypes.bool
+    active:    React.PropTypes.bool,
+    alignRight:     React.PropTypes.bool
   },
 
   render: function () {
@@ -49,7 +50,7 @@ var DropdownButton = React.createClass({
       <DropdownMenu
         ref="menu"
         aria-labelledby={this.props.id}
-        pullRight={this.props.pullRight}
+        pullRight={this.props.alignRight}
         key={1}>
         {ValidComponentChildren.map(this.props.children, this.renderMenuItem)}
       </DropdownMenu>
@@ -59,7 +60,8 @@ var DropdownButton = React.createClass({
   renderButtonGroup: function (children) {
     var groupClasses = {
         'open': this.state.open,
-        'dropup': this.props.dropup
+        'dropup': this.props.dropup,
+        'pull-right': this.props.pullRight
       };
 
     return (
@@ -76,7 +78,8 @@ var DropdownButton = React.createClass({
         'dropdown': true,
         'open': this.state.open,
         'dropup': this.props.dropup,
-        'active': this.props.active
+        'active': this.props.active,
+        'pull-right': this.props.pullRight
       };
 
     return (
