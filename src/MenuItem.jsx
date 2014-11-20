@@ -4,12 +4,12 @@ var classSet = require('./utils/classSet');
 
 var MenuItem = React.createClass({
   propTypes: {
-    header:    React.PropTypes.bool,
-    divider:   React.PropTypes.bool,
+    header:   React.PropTypes.bool,
+    divider:  React.PropTypes.bool,
     active:   React.PropTypes.bool,
-    href:      React.PropTypes.string,
-    title:     React.PropTypes.string,
-    onSelect:  React.PropTypes.func,
+    href:     React.PropTypes.string,
+    title:    React.PropTypes.string,
+    onSelect: React.PropTypes.func,
     eventKey: React.PropTypes.any,
     anchorClass: React.PropTypes.string
   },
