@@ -88,8 +88,12 @@ var CollapsableMixin = {
     if (node) {
         var dimension = (typeof this.getCollapsableDimension === 'function') ?
             this.getCollapsableDimension() : 'height';
-        node.style[dimension] = this.isExpanded() ?
-            this.getCollapsableDimensionValue() + 'px' : '0px';
+        node.style[dimension] = (
+            this.isExpanded()
+                ? (!this.state.collapsing
+                   ? 'auto'
+                   : this.getCollapsableDimensionValue() + 'px')
+            : '0px');
     }
   },
 
